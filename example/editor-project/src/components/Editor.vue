@@ -1,0 +1,42 @@
+<script setup lang="ts">
+import { onMounted, ref } from "vue";
+import * as monaco from "monaco-editor";
+
+const props = defineProps({
+  modelValue: String,
+});
+
+const emit = defineEmits(["update:modelValue"]);
+
+const dom = ref();
+
+let instance: monaco.editor.IStandaloneCodeEditor;
+
+onMounted(() => {
+  const jsonModel = monaco.editor.createModel(
+    props.modelValue || "",
+    "json",
+    monaco.Uri.parse("json://grid/settings.json")
+  );
+
+  instance = monaco.editor.create(dom.value, {
+    model: jsonModel,
+    tabSize: 2,
+    automaticLayout: true,
+    scrollBeyondLastLine: false,
+  });
+
+  instance.onDidChangeModelContent(() => {
+    const value = instance.getValue();
+    emit("update:modelValue", value);
+  });
+});
+</script>
+<template>
+  <div class="editor" ref="dom"></div>
+</template>
+<style>
+.editor {
+  height: 100%;
+}
+</style>
