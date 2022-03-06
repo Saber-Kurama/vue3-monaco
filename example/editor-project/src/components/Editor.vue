@@ -1,7 +1,18 @@
 <script setup lang="ts">
 import { onMounted, ref } from "vue";
 import * as monaco from "monaco-editor";
+import EditorWorker from 'monaco-editor/esm/vs/editor/editor.worker?worker';
+import JsonWorker from 'monaco-editor/esm/vs/language/json/json.worker?worker';
 
+// @ts-ignore
+self.MonacoEnvironment = {
+  getWorker(workerId: any, label: string) {
+    if (label === 'json') {
+      return new JsonWorker();
+    }
+    return new EditorWorker();
+  },
+};
 const props = defineProps({
   modelValue: String,
 });
