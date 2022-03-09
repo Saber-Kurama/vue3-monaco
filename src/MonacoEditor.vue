@@ -1,5 +1,5 @@
 <script lang="ts">
-import { computed, defineComponent, onMounted, ref } from "vue";
+import { computed, defineComponent, onMounted, ref, watch } from "vue";
 // TODO: 如何做到按需加载 修改 vite的插件
 // 第一版本 先不考虑 按需
 import * as monaco from "monaco-editor";
@@ -60,7 +60,7 @@ const style = computed(() => {
     height: addCssUtils(props.height)
   }
 })
-let editorInstance: any;
+let editorInstance: monaco.editor.IStandaloneCodeEditor;
 // 初始化插件
 const initMonaco = () => {
   if (dom.value) {
@@ -80,6 +80,11 @@ const initMonaco = () => {
 onMounted(() => {
   initMonaco();
 });
+watch(() => props.modelValue, (newVal) => {
+  if(newVal !== editorInstance.getValue()){
+    editorInstance.setValue(newVal)
+  }
+})
 </script>
 <template>
   <div ref="dom" :style="style"></div>
