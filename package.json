@@ -1,5 +1,5 @@
 {
-  "name": "vue3-monaco",
+  "name": "@dangojs/vue3-monaco",
   "version": "0.0.0",
   "description": "vue3 monaco editor 组件",
   "main": "lib/index.js",
