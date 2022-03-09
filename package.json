@@ -1,6 +1,6 @@
 {
   "name": "@dangojs/vue3-monaco",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "vue3 monaco editor 组件",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -9,7 +9,14 @@
     "example": "example"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "pnpm run build:component",
+    "build:component": "dango-vue build:component",
+    "build:style": "dango-vue build:style",
+    "prepublishOnly": "pnpm run build",
+    "change": "pnpm changeset",
+    "vp": "pnpm changeset version",
+    "pub": "pnpm changeset publish",
+    "release": "pnpm changeset publish"
   },
   "repository": {
     "type": "git",
@@ -30,7 +37,9 @@
   },
   "homepage": "https://github.com/Saber-Kurama/vue3-monaco#readme",
   "devDependencies": {
-    "@dangojs/vue-scripts": "^0.0.4"
+    "@changesets/cli": "^2.20.0",
+    "@dangojs/vue-scripts": "^0.0.4",
+    "typescript": "^4.5.5"
   },
   "peerDependencies": {
     "vue": "^3.2.31"
