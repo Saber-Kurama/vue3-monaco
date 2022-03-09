@@ -3,13 +3,15 @@
 // Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
 import HelloWorld from "./components/HelloWorld.vue";
 import Edit from "./components/Editor.vue";
+import MonacoEditor from '../../../src/index';
 import { ref } from "vue";
 
 const code = ref("");
 </script>
 
 <template>
-  <Edit v-model="code"></Edit>
+  <MonacoEditor v-model="code" ></MonacoEditor>
+  <!-- <Edit v-model="code"></Edit> -->
 </template>
 
 <style>

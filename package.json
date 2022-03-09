@@ -1,0 +1,42 @@
+{
+  "name": "vue3-monaco",
+  "version": "0.0.0",
+  "description": "vue3 monaco editor 组件",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "directories": {
+    "doc": "docs",
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saber-Kurama/vue3-monaco.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Saber-Kurama/vue3-monaco/issues"
+  },
+  "files": [
+    "es",
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "",
+    "access": "public"
+  },
+  "homepage": "https://github.com/Saber-Kurama/vue3-monaco#readme",
+  "devDependencies": {
+    "@dangojs/vue-scripts": "^0.0.4"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.31"
+  },
+  "dependencies": {
+    "monaco-editor": "^0.32.1",
+    "vue": "^3.2.31"
+  }
+}

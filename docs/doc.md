@@ -16,4 +16,6 @@ https://zhuanlan.zhihu.com/p/88828576
 https://www.zhoulujun.cn/html/webfront/visualization/webCodeEditor/8561.html
 https://github.com/Aaaaash/blog/issues/10
 
+https://github.com/vitejs/vite/discussions/1791
+
 https://sli.dev/
