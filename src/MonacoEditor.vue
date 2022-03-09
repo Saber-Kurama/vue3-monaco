@@ -80,9 +80,18 @@ const initMonaco = () => {
 onMounted(() => {
   initMonaco();
 });
+
+// 内容发生修改
 watch(() => props.modelValue, (newVal) => {
-  if(newVal !== editorInstance.getValue()){
+  if(editorInstance && newVal !== editorInstance.getValue()){
     editorInstance.setValue(newVal)
+  }
+})
+
+watch(() => props.language, (newVal) => {
+  if(newVal && editorInstance){
+    const model = editorInstance.getModel();
+    model && monaco.editor.setModelLanguage(model, newVal);
   }
 })
 </script>
