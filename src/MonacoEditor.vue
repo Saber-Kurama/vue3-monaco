@@ -3,6 +3,10 @@ import { computed, defineComponent, onMounted, ref, watch } from "vue";
 // TODO: 如何做到按需加载 修改 vite的插件
 // 第一版本 先不考虑 按需
 import * as monaco from "monaco-editor";
+// import * as monaco from 'monaco-editor/esm/vs/editor/editor.api';
+
+// enables our language workern right away, despite no schema
+// import 'monaco-graphql';
 const addCssUtils = (val: string | number) => {
   val.toString().endsWith
   if(/.*(px|rem|%)/i.test(val.toString())){
