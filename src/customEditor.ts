@@ -1,7 +1,7 @@
 /*
  * @Author: saber
  * @Date: 2022-03-11 11:33:54
- * @LastEditTime: 2022-03-11 11:35:54
+ * @LastEditTime: 2022-03-14 19:16:07
  * @LastEditors: saber
  * @Description: 
  */
@@ -13,6 +13,8 @@ import * as monaco from "monaco-editor";
 // enables our language workern right away, despite no schema
 // import 'monaco-graphql';
 import "./languages/sql/simpleComplete";
+import "./languages/python/simpleComplete";
+import "./languages/shell/simpleComplete";
 import DraculaTheme from "./themes/Dracula";
 import GitHubTheme from "./themes/GitHub";
 

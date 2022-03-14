@@ -1,12 +1,12 @@
 /*
  * @Author: saber
  * @Date: 2022-03-10 21:15:03
- * @LastEditTime: 2022-03-14 18:59:01
+ * @LastEditTime: 2022-03-14 19:15:43
  * @LastEditors: saber
  * @Description:
  */
 import * as monaco from "monaco-editor";
-import { language } from "./sql";
+import { language } from "./shell";
 
 const SORT_TEXT = {
   Database: "0",
@@ -17,9 +17,7 @@ const SORT_TEXT = {
 
 const keywords = [
   ...language.keywords,
-  ...language.operators,
-  ...language.builtinFunctions,
-  ...language.builtinVariables,
+  ...language.builtins
 ];
 const getKeywordSuggest = (): monaco.languages.CompletionItem[] => {
   return keywords.map((keyword) => {
@@ -35,7 +33,7 @@ const getKeywordSuggest = (): monaco.languages.CompletionItem[] => {
   });
 };
 // 提示
-monaco.languages.registerCompletionItemProvider("sql", {
+monaco.languages.registerCompletionItemProvider("shell", {
   triggerCharacters: ["."],
   provideCompletionItems(
     model: monaco.editor.ITextModel,
@@ -43,15 +41,6 @@ monaco.languages.registerCompletionItemProvider("sql", {
     context: monaco.languages.CompletionContext,
     token: monaco.CancellationToken
   ) {
-    // const word = "SELECT";
-    // const index = 0;
-    // const wordInfo = model.getWordUntilPosition(position);
-    // const wordRange = new monaco.Range(
-    //   position.lineNumber,
-    //   wordInfo.startColumn,
-    //   position.lineNumber,
-    //   wordInfo.endColumn
-    // );
     return {
       // incomplete
       suggestions: [
