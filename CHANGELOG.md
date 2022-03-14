@@ -1,5 +1,12 @@
 # @dangojs/vue3-monaco
 
+## 0.0.3
+
+### Patch Changes
+
+- 添加 python 和 shell 的关键字的提示
+- 添加 GitHub 和 Dracula 主题
+
 ## 0.0.2
 
 ### Patch Changes
