@@ -1,5 +1,11 @@
 # @dangojs/vue3-monaco
 
+## 0.0.4
+
+### Patch Changes
+
+- 增加 properties 的支持
+
 ## 0.0.3
 
 ### Patch Changes

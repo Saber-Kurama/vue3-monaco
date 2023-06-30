@@ -1,6 +1,6 @@
 {
   "name": "@dangojs/vue3-monaco",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "vue3 monaco editor 组件",
   "main": "lib/index.js",
   "module": "es/index.js",
