@@ -1,0 +1,77 @@
+Arguments: 
+  /Users/saber/.nvm/versions/node/v16.14.2/bin/node /Users/saber/.node/corepack/yarn/1.22.15/bin/yarn.js add monaco-yaml
+
+PATH: 
+  /Users/saber/.rbenv/shims:/Users/saber/.rbenv/bin:/Applications/Racket v8.1/bin:/Users/saber/.nvm/versions/node/v16.14.2/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin:/Users/saber/.rbenv/shims:/Users/saber/.rbenv/bin:/Applications/Racket v8.1/bin:/Users/saber/.nvm/versions/node/v16.14.2/bin:/usr/local/sbin:/Users/saber/.cargo/bin:/Users/saber/.rvm/bin:/usr/local/mysql/bin:/Users/saber/.rvm/bin:/usr/local/mysql/bin
+
+Yarn version: 
+  1.22.15
+
+Node version: 
+  16.14.2
+
+Platform: 
+  darwin x64
+
+Trace: 
+  Error: ENOENT: no such file or directory, copyfile '/Users/saber/Library/Caches/Yarn/v6/npm-ansi-styles-3.2.1-41fbb20243e50b12be0f04b8dedbf07520ce841d-integrity/node_modules/ansi-styles/index.js' -> '/Users/saber/coding/mygithub/vue3-monaco/node_modules/@changesets/cli/node_modules/ansi-styles/index.js'
+
+npm manifest: 
+  {
+    "name": "@dangojs/vue3-monaco",
+    "version": "0.0.3",
+    "description": "vue3 monaco editor 组件",
+    "main": "lib/index.js",
+    "module": "es/index.js",
+    "directories": {
+      "doc": "docs",
+      "example": "example"
+    },
+    "scripts": {
+      "build": "pnpm run build:component",
+      "build:component": "dango-vue build:component",
+      "build:style": "dango-vue build:style",
+      "prepublishOnly": "pnpm run build",
+      "change": "pnpm changeset",
+      "vp": "pnpm changeset version",
+      "pub": "pnpm changeset publish",
+      "release": "pnpm changeset publish"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/Saber-Kurama/vue3-monaco.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+      "url": "https://github.com/Saber-Kurama/vue3-monaco/issues"
+    },
+    "files": [
+      "es",
+      "lib"
+    ],
+    "publishConfig": {
+      "registry": "",
+      "access": "public"
+    },
+    "homepage": "https://github.com/Saber-Kurama/vue3-monaco#readme",
+    "devDependencies": {
+      "@changesets/cli": "^2.20.0",
+      "@dangojs/vue-scripts": "^0.0.4",
+      "graphql": "^16.3.0",
+      "monaco-editor": "^0.32.1",
+      "monaco-graphql": "^1.0.11",
+      "typescript": "^4.5.5",
+      "vue": "^3.2.31"
+    },
+    "peerDependencies": {
+      "monaco-editor": "^0.32.1",
+      "vue": "^3.2.31"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile

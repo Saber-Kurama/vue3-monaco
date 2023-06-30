@@ -1,7 +1,7 @@
 /*
  * @Author: saber
  * @Date: 2022-03-11 11:33:54
- * @LastEditTime: 2022-03-14 19:16:07
+ * @LastEditTime: 2023-06-29 16:41:11
  * @LastEditors: saber
  * @Description: 
  */
@@ -15,6 +15,7 @@ import * as monaco from "monaco-editor";
 import "./languages/sql/simpleComplete";
 import "./languages/python/simpleComplete";
 import "./languages/shell/simpleComplete";
+import "./languages/properties/index";
 import DraculaTheme from "./themes/Dracula";
 import GitHubTheme from "./themes/GitHub";
 

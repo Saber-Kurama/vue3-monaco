@@ -10,7 +10,7 @@ const code = ref("");
 </script>
 
 <template>
-  <MonacoEditor v-model="code" ></MonacoEditor>
+  <MonacoEditor v-model="code" language="properties" theme="vs"></MonacoEditor>
   <!-- <Edit v-model="code"></Edit> -->
 </template>
 

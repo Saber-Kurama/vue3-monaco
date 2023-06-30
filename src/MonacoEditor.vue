@@ -1,6 +1,7 @@
 <script lang="ts">
 import { computed, defineComponent, onMounted, ref, watch } from "vue";
 import { monaco } from "./customEditor"
+import { modelUri } from './languages/yaml'
 const addCssUtils = (val: string | number) => {
   val.toString().endsWith;
   if (/.*(px|rem|%)/i.test(val.toString())) {
@@ -67,7 +68,7 @@ let editorInstance: monaco.editor.IStandaloneCodeEditor;
 const initMonaco = () => {
   if (dom.value) {
     const defaultOptions = {
-      
+
     }
     // props.options?.tabSize
     editorInstance = monaco.editor.create(dom.value, {
@@ -86,6 +87,19 @@ const initMonaco = () => {
 onMounted(() => {
   initMonaco();
 });
+
+const changeModelByLanguage = (language: string) => {
+  if (props.language === "yaml") {
+    const model = monaco.editor.createModel('p1: \np2: \n', 'yaml', modelUri);
+    if(editorInstance) {
+      editorInstance.setModel(model);
+    }
+  }
+}
+
+watch(() => props.language, (language) => {
+  changeModelByLanguage(language)
+})
 
 // 内容发生修改
 watch(
