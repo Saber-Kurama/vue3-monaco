@@ -1,17 +1,9 @@
 <script lang="ts">
-import { computed, defineComponent, onMounted, ref, watch } from "vue";
+import { computed, defineComponent, nextTick, onMounted, ref, watch } from "vue";
 import { monaco } from "./customEditor"
+import { addCssUtils } from "./utils";
 // import { modelUri } from './languages/yaml'
-const addCssUtils = (val: string | number) => {
-  val.toString().endsWith;
-  if (/.*(px|rem|%)/i.test(val.toString())) {
-    return val;
-  }
-  if (!isNaN(Number.parseFloat(val.toString()))) {
-    return `${val}px`;
-  }
-  return val;
-};
+
 export default defineComponent({
   name: "MonacoEditor",
 });
@@ -75,7 +67,7 @@ const initMonaco = () => {
       value: props.modelValue, // 自动创建 modal
       theme: props.theme,
       language: props.language,
-      ...props.options,
+      // ...props.options,
     });
     editorInstance.onDidChangeModelContent(() => {
       const value = editorInstance.getValue() || "";
@@ -85,7 +77,10 @@ const initMonaco = () => {
   }
 };
 onMounted(() => {
-  initMonaco();
+  nextTick(() => {
+    initMonaco();
+  })
+  
 });
 
 const changeModelByLanguage = (language: string) => {

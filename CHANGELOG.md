@@ -1,5 +1,11 @@
 # @dangojs/vue3-monaco
 
+## 0.0.5
+
+### Patch Changes
+
+- 增加 diff
+
 ## 0.0.4
 
 ### Patch Changes
